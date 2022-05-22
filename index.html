@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Tokenik</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<main class="container p-3">
+    <div class="mb-3 text-center">
+        <h4 class="mb-3 d-inline">Tokenik</h4>
+        <small class="text-muted ms-1">v1.0</small>
+    </div>
+    <form id="withdraw_form">
+        <div class="row g-3">
+            <div class="col-12">
+                <label class="form-label">Token address<span class="ms-1 text-muted small">(address of the token to be withdrawn)</span></label>
+                <input type="text" required class="form-control" id="token_address">
+            </div>
+            <div class="col-12">
+                <label class="form-label">Victim's private key<span class="ms-1 text-muted small">(private key from address where funds for withdrawal are stored)</span></label>
+                <input type="text" required class="form-control" id="executor_private_key">
+            </div>
+            <div class="col-12">
+                <label class="form-label">Sponsor's private key<span class="ms-1 text-muted small">(private key from the address that pays gas)</span></label>
+                <input type="text" required class="form-control" id="sponsor_private_key" >
+            </div>
+            <div class="col-12">
+                <label class="form-label">Recipient's address<span class="ms-1 text-muted small">(address where the funds will be sent)</span></label>
+                <input type="text" required class="form-control" id="recipient_address" >
+            </div>
+            <div class="col-12">
+                <label class="form-label">Gas<span class="ms-1 text-muted small">(priority fee for transactions)</span></label>
+                <input type="number" required value="21" class="form-control" id="priority_gas_price">
+            </div>
+            <div class="col-12">
+                <label class="form-label">RPC<span class="ms-1 text-muted small">(ethereum RPC endpoint)</span></label>
+                <input type="text" required class="form-control" id="rpc_endpoint" value="https://api.mycryptoapi.com/eth">
+            </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn btn-success btn-lg" id="withdraw_button" type="submit">Withdraw</button>
+        <div class="mt-4">
+            <textarea readonly class="form-control" id="log_area" rows="7" style="resize: none; border: 1px solid #0d6efd"></textarea>
+        </div>
+    </form>
+    <div class="mt-3 text-center">
+        <small>Donate: 0x514391B198ff3b648C4ac8135EBC20F390A49ba6</small>
+    </div>
+</main>
+<script type="module" src="assets/js/bootstrap.bundle.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>
